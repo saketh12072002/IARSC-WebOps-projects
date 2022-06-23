@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.flex-container {
+  margin: auto;
+  display: flexbox;   /*flexbox*/
+  flex-direction: horizontal; /*flex-direction is horizontal*/
+  background-color:blueviolet;
+  height: 100%;
+  padding: 20px;
+}
+
+.flex-container > div {
+  background-color:orange;
+  color: white;
+  width: 10%; /*width is 10%*/
+  height: auto;
+  margin: auto;
+  margin-top: 20px;
+  padding: 40px;
+  text-align: center;
+}
+.opac{
+  opacity: 0.7;/*opacity is 0.7 and the vhangecan be viewed by hoering on the box*/
+  margin-top: 30px;
+}
+.opac:hover{
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+<h1>Part1-3</h1>
+
+<div class="flex-container">
+  <div class="opac"></div>/*div elements which are our boxes*/
+  <div></div>
+  <div></div>
+  <div></div>
+  <div class="opac"></div>/*Given a class opac to show the opacity*/
+</div>
+
+</body>
+</html>
