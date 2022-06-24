@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color:brown;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  margin: auto;
+  width: 500px;
+  max-width: 100%;
+  padding: 16px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 15%;
+  border: none;
+  cursor: pointer;
+  width: 70%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<form name="myForm" action="#" onsubmit="return validateForm()">
+  <div class="container">
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="pswrepeat" id="psw-repeat" required>
+    <hr>
+
+    <input type="submit" class="registerbtn">
+  </div>
+
+</form>
+<script>
+function validateForm() {
+  var x=document.myForm.email.value;  
+var atposition=x.indexOf("@");  
+var dotposition=x.lastIndexOf(".");  
+if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+  alert("Please enter a valid e-mail address \n");  
+  return false;  
+  }  
+  var firstpassword=document.myForm.psw.value;  
+var secondpassword=document.myForm.pswrepeat.value;  
+  
+
+if(firstpassword==secondpassword){  
+return true;  
+  }  
+else{  
+alert("password must be same!");  
+return false;  
+  } 
+  var y=document.myForm.psw.value; 
+  if (y<8 || y.search(/[a-z]/i) < 0 || y.search(/[A-Z]/i) < 0) {
+    alert("Password must conain ateast 8 characters. Password must contain atleast one uppercase,one lowercase, one special character");
+    return false;
+  }
+  else{
+      return true;
+    }
+}
+  
+
+</script>
+</body>
+</html>
